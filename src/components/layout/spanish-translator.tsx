@@ -46,6 +46,7 @@ export function SpanishTranslator() {
 
   useEffect(() => {
     let frame = 0;
+    const translatedNodes = new WeakSet<Text>();
     const translate = () => {
       const roots = Array.from(document.querySelectorAll("main"));
       for (const root of roots) {
@@ -60,10 +61,19 @@ export function SpanishTranslator() {
         while ((node = walker.nextNode())) nodes.push(node as Text);
         for (const textNode of nodes) {
           if (textNode.parentElement?.closest("script,style")) continue;
+          if (translatedNodes.has(textNode)) continue;
           let value = textNode.nodeValue || "";
-          if (value.trim().toLowerCase() === "products") { textNode.nodeValue = ""; continue; }
-          for (const [english, spanish] of Object.entries(translations).sort(([a], [b]) => b.length - a.length)) value = value.split(english).join(spanish);
-          if (value !== textNode.nodeValue) textNode.nodeValue = value;
+          if (value.trim().toLowerCase() === "products") { textNode.nodeValue = ""; translatedNodes.add(textNode); continue; }
+          for (const [english, spanish] of Object.entries(translations).sort(([a], [b]) => b.length - a.length)) {
+            // Avoid replacing a source word inside its own translated result
+            // (for example, "Document" inside "Documento") on later updates.
+            if (spanish.includes(english) && value.includes(spanish)) continue;
+            value = value.split(english).join(spanish);
+          }
+          if (value !== textNode.nodeValue) {
+            textNode.nodeValue = value;
+            translatedNodes.add(textNode);
+          }
         }
       }
       document.documentElement.lang = "es";
