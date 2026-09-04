@@ -42,13 +42,13 @@ export function SpanishTranslator() {
   useEffect(() => {
     let frame = 0;
     const translate = () => {
-      document.querySelectorAll<HTMLAnchorElement>('a[href^="/en"]').forEach((anchor) => {
-        const url = new URL(anchor.getAttribute("href") || "/en", window.location.origin);
-        const base = Object.keys(spanishRoutes).sort((a, b) => b.length - a.length).find((route) => url.pathname === route || url.pathname.startsWith(`${route}/`));
-        if (base) anchor.setAttribute("href", `${spanishRoutes[base]}${url.pathname.slice(base.length)}${url.search}${url.hash}`);
-      });
       const roots = Array.from(document.querySelectorAll("main"));
       for (const root of roots) {
+        root.querySelectorAll<HTMLAnchorElement>('a[href^="/en"]').forEach((anchor) => {
+          const url = new URL(anchor.getAttribute("href") || "/en", window.location.origin);
+          const base = Object.keys(spanishRoutes).sort((a, b) => b.length - a.length).find((route) => url.pathname === route || url.pathname.startsWith(`${route}/`));
+          if (base) anchor.setAttribute("href", `${spanishRoutes[base]}${url.pathname.slice(base.length)}${url.search}${url.hash}`);
+        });
         const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
         const nodes: Text[] = [];
         let node: Node | null;
@@ -60,6 +60,7 @@ export function SpanishTranslator() {
           if (value !== textNode.nodeValue) textNode.nodeValue = value;
         }
       }
+      document.documentElement.lang = "es";
     };
     const schedule = () => {
       cancelAnimationFrame(frame);
