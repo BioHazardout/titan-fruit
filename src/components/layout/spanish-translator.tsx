@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 // tree as English while translating every visible label after hydration.
 const translations: Record<string, string> = {
   "Peruvian origin.": "Origen peruano.", "Global opportunities.": "Oportunidades globales.",
+  "Peruvian Origin": "Origen peruano", "explore fresh fruit": "explorar fruta fresca", "explore iqf": "explorar IQF", "explore maquila": "explorar maquila", "EXPLORE FRESH FRUIT": "EXPLORAR FRUTA FRESCA", "EXPLORE IQF": "EXPLORAR IQF", "EXPLORE MAQUILA": "EXPLORAR MAQUILA",
   "Fresh. Frozen. Processed.": "Fresco. Congelado. Procesado.",
   "Premium Quality": "Calidad premium", "Integrated Solutions": "Soluciones integrales", "Fresh, Frozen & Processing": "Fresco, congelado y procesado", "Global Supply": "Abastecimiento global", "USA, Europe & Beyond": "EE. UU., Europa y más",
   "What are you": "¿Qué estás", "looking for?": "buscando?", "Three solutions. One partner.": "Tres soluciones. Un solo socio.",
@@ -59,6 +60,7 @@ export function SpanishTranslator() {
         for (const textNode of nodes) {
           if (textNode.parentElement?.closest("script,style")) continue;
           let value = textNode.nodeValue || "";
+          if (value.trim().toLowerCase() === "products") { textNode.nodeValue = ""; continue; }
           for (const [english, spanish] of Object.entries(translations)) value = value.split(english).join(spanish);
           if (value !== textNode.nodeValue) textNode.nodeValue = value;
         }
