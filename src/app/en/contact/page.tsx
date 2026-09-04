@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Icon } from "@/components/ui/icons";
+import { ContactForm } from "@/components/contact/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact Titan Fruit",
@@ -53,17 +54,7 @@ export default function ContactPage() {
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-ink/65">Share a few details about your project. A Titan Fruit specialist will reply to you soon.</p>
         </div>
 
-        <form action="mailto:ventas@titanfruitperu.com" method="post" encType="text/plain" className="mx-auto mt-10 max-w-3xl rounded-3xl border border-forest/10 bg-cream p-6 shadow-card sm:p-10">
-          <div className="grid gap-5 sm:grid-cols-2">
-            <label className="text-sm font-semibold text-forest">Name<input required name="name" type="text" placeholder="Your name" className="mt-2 w-full rounded-xl border border-forest/15 bg-white px-4 py-3 text-sm font-normal text-ink outline-none transition focus:border-leaf focus:ring-2 focus:ring-lime/50" /></label>
-            <label className="text-sm font-semibold text-forest">Company<input name="company" type="text" placeholder="Your company" className="mt-2 w-full rounded-xl border border-forest/15 bg-white px-4 py-3 text-sm font-normal text-ink outline-none transition focus:border-leaf focus:ring-2 focus:ring-lime/50" /></label>
-            <label className="text-sm font-semibold text-forest">Email<input required name="email" type="email" placeholder="you@company.com" className="mt-2 w-full rounded-xl border border-forest/15 bg-white px-4 py-3 text-sm font-normal text-ink outline-none transition focus:border-leaf focus:ring-2 focus:ring-lime/50" /></label>
-            <label className="text-sm font-semibold text-forest">Phone<input name="phone" type="tel" placeholder="+1 000 000 0000" className="mt-2 w-full rounded-xl border border-forest/15 bg-white px-4 py-3 text-sm font-normal text-ink outline-none transition focus:border-leaf focus:ring-2 focus:ring-lime/50" /></label>
-          </div>
-          <label className="mt-5 block text-sm font-semibold text-forest">Message<textarea required name="message" rows={6} placeholder="Tell us about your requirements..." className="mt-2 w-full resize-y rounded-xl border border-forest/15 bg-white px-4 py-3 text-sm font-normal text-ink outline-none transition focus:border-leaf focus:ring-2 focus:ring-lime/50" /></label>
-          <button type="submit" className="group mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full bg-lime px-6 py-4 text-xs font-bold uppercase tracking-[.1em] text-forest transition-colors hover:bg-forest hover:text-white">Send message <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" /></button>
-          <p className="mt-4 text-center text-xs text-ink/55">Your message will be addressed to ventas@titanfruitperu.com.</p>
-        </form>
+        <ContactForm />
       </div>
     </section>
 

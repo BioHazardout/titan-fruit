@@ -75,6 +75,10 @@ export function SpanishTranslator() {
             translatedNodes.add(textNode);
           }
         }
+        root.querySelectorAll<HTMLElement>("[placeholder]").forEach((element) => {
+          const placeholder = element.getAttribute("placeholder");
+          if (placeholder && translations[placeholder]) element.setAttribute("placeholder", translations[placeholder]);
+        });
       }
       document.documentElement.lang = "es";
     };
