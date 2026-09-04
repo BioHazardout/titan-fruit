@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 // Text-only localization keeps the Spanish routes on the same tested component
 // tree as English while translating every visible label after hydration.
@@ -21,23 +22,50 @@ const translations: Record<string, string> = {
   "Infrastructure that delivers quality": "Infraestructura que entrega calidad", "Each area of our plant is designed to ensure the safety, traceability and quality of the fruit that reaches the world.": "Cada área de nuestra planta está diseñada para garantizar la seguridad, trazabilidad y calidad de la fruta que llega al mundo.", "Our facilities": "Nuestras instalaciones", "Exterior": "Exterior", "Reception": "Recepción", "Selection": "Selección", "Processing": "Procesamiento", "Packing": "Empaque", "Cold storage": "Almacenamiento en frío", "Quality control": "Control de calidad", "Dispatch": "Despacho", "From origin to export": "Del origen a la exportación", "Farm / suppliers": "Campo / proveedores", "International logistics": "Logística internacional", "Customer": "Cliente", "An integrated and controlled process that guarantees safe, high-quality fruit, ready for the most demanding markets.": "Un proceso integrado y controlado que garantiza fruta segura y de alta calidad, lista para los mercados más exigentes.", "Built-up area": "Área construida", "Authorized for primary processing": "Autorizado para procesamiento primario", "Food quality and safety standards": "Estándares de calidad e inocuidad alimentaria", "Skilled professionals committed to quality": "Profesionales capacitados comprometidos con la calidad.",
   "Processing partnership": "Alianza de procesamiento", "Flexible processing.": "Procesamiento flexible.", "A trusted partner.": "Un socio confiable.", "Processing solutions designed around your business needs.": "Soluciones de procesamiento diseñadas para las necesidades de tu negocio.", "Authorized Facility": "Planta autorizada", "Global Perspective": "Perspectiva global", "Primary processing takes place in our SENASA-authorized facility.": "El procesamiento primario se realiza en nuestra planta autorizada por SENASA.", "Built for international B2B supply requirements.": "Diseñada para las necesidades internacionales de suministro B2B.",
   "Peruvian fresh produce": "Productos frescos peruanos", "Featured products": "Productos destacados", "From our fields": "Desde nuestros campos", "Availability": "Disponibilidad", "Looking for a specific product?": "¿Buscas un producto específico?", "ASK ABOUT AVAILABILITY": "CONSULTAR DISPONIBILIDAD",
+  "Fresh & Agricultural": "Frutas y productos agrícolas", "Agricultural": "agrícolas", "Premium fresh fruits and vegetables from Peru, carefully selected and processed in our SENASA-authorized facility to meet global standards.": "Frutas y verduras frescas premium del Perú, cuidadosamente seleccionadas y procesadas en nuestra planta autorizada por SENASA para cumplir los estándares globales.", "Fruits": "Frutas", "Vegetables": "Verduras", "OTHER SELECTED FRUITS": "OTRAS FRUTAS SELECCIONADAS", "OTHER SELECTED VEGETABLES": "OTRAS VERDURAS SELECCIONADAS", "SHOW LESS": "MOSTRAR MENOS",
   "Global supply": "Abastecimiento global", "Peru connected to key markets.": "Perú conectado con mercados clave.", "Pause globe": "Pausar planeta", "Resume globe": "Reanudar planeta", "Peru origin": "Origen: Perú", "United States & Europe": "Estados Unidos y Europa", "Drag to rotate and zoom, or use the button to pause the automatic rotation.": "Arrastra para girar y acercar, o usa el botón para pausar la rotación automática.", "Europe": "Europa", "United States": "Estados Unidos", "North America": "Norteamérica", "Middle East": "Medio Oriente", "Latin America": "Latinoamérica",
 };
 
+const spanishRoutes: Record<string, string> = {
+  "/en": "/es", "/en/fresh-fruit": "/es/fruta-fresca", "/en/iqf-frozen": "/es/iqf-congelados",
+  "/en/maquila-services": "/es/servicios-maquila", "/en/our-facility": "/es/nuestra-planta",
+  "/en/about-us": "/es/nosotros", "/en/quality-certifications": "/es/calidad-certificaciones", "/en/contact": "/es/contacto",
+};
+
 export function SpanishTranslator() {
+  const pathname = usePathname();
+
   useEffect(() => {
-    const root = document.querySelector("main");
-    if (!root) return;
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    const nodes: Text[] = [];
-    let node: Node | null;
-    while ((node = walker.nextNode())) nodes.push(node as Text);
-    for (const textNode of nodes) {
-      if (textNode.parentElement?.closest("script,style")) continue;
-      let value = textNode.nodeValue || "";
-      for (const [english, spanish] of Object.entries(translations)) value = value.split(english).join(spanish);
-      textNode.nodeValue = value;
-    }
-  });
+    let frame = 0;
+    const translate = () => {
+      document.querySelectorAll<HTMLAnchorElement>('a[href^="/en"]').forEach((anchor) => {
+        const url = new URL(anchor.getAttribute("href") || "/en", window.location.origin);
+        const base = Object.keys(spanishRoutes).sort((a, b) => b.length - a.length).find((route) => url.pathname === route || url.pathname.startsWith(`${route}/`));
+        if (base) anchor.setAttribute("href", `${spanishRoutes[base]}${url.pathname.slice(base.length)}${url.search}${url.hash}`);
+      });
+      const roots = Array.from(document.querySelectorAll("main"));
+      for (const root of roots) {
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        const nodes: Text[] = [];
+        let node: Node | null;
+        while ((node = walker.nextNode())) nodes.push(node as Text);
+        for (const textNode of nodes) {
+          if (textNode.parentElement?.closest("script,style")) continue;
+          let value = textNode.nodeValue || "";
+          for (const [english, spanish] of Object.entries(translations)) value = value.split(english).join(spanish);
+          if (value !== textNode.nodeValue) textNode.nodeValue = value;
+        }
+      }
+    };
+    const schedule = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(translate);
+    };
+    schedule();
+    const observer = new MutationObserver(schedule);
+    observer.observe(document.body, { subtree: true, childList: true, characterData: true });
+    const delayed = window.setTimeout(schedule, 100);
+    return () => { cancelAnimationFrame(frame); window.clearTimeout(delayed); observer.disconnect(); };
+  }, [pathname]);
   return null;
 }
