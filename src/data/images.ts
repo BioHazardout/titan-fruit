@@ -1,0 +1,5 @@
+/** Temporary editorial photography. Replace only these paths when Titan Fruit assets are available. */
+export const images = {
+  hero: "/images/temporary/fresh.jpg", fresh: "/images/temporary/fresh.jpg", frozen: "/images/temporary/frozen.jpg", maquila: "/images/temporary/maquila.jpg", facility: "/images/temporary/facility.jpg", usa: "/images/temporary/usa.jpg", europe: "/images/temporary/europe.jpg", europeLondon: "/images/temporary/europe-london.jpg",
+  avocado: "/images/temporary/avocado.jpg", dragonFruit: "/images/temporary/dragonFruit.jpg", freshFruitHero: "/images/company/fresh-fruit.webp", granadilla: "/images/temporary/granadilla.jpg", blueberries: "/images/temporary/blueberries.jpg", passionFruit: "/images/temporary/passionFruit.jpg", strawberries: "/images/temporary/strawberries.jpg", aji: "/images/temporary/aji.jpg", garlic: "/images/temporary/garlic.jpg", paprika: "/images/temporary/paprika.jpg", peppers: "/images/temporary/peppers.jpg", senasa: "/images/company/senasa-authorization.jpg",
+} as const;

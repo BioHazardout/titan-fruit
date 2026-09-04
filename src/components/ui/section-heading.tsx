@@ -1,0 +1,3 @@
+export function SectionHeading({ eyebrow, title, intro, light = false, centered = true }: { eyebrow: string; title: React.ReactNode; intro?: string; light?: boolean; centered?: boolean }) {
+  return <div className={`max-w-2xl ${centered ? "mx-auto text-center" : ""} ${light ? "text-white" : "text-ink"}`}><p className={`eyebrow mb-4 ${light ? "text-lime" : "text-leaf"}`}>{eyebrow}</p><h2 className="display text-4xl font-bold sm:text-5xl">{title}</h2>{intro && <p className={`mt-5 ${centered ? "mx-auto" : ""} max-w-xl text-base leading-7 ${light ? "text-white/75" : "text-ink/65"}`}>{intro}</p>}</div>;
+}

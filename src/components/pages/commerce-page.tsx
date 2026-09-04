@@ -1,0 +1,10 @@
+import Image from "next/image";
+import { PageHero } from "@/components/hero/page-hero";
+import { Button } from "@/components/ui/button";
+import { Icon, type IconName } from "@/components/ui/icons";
+import { SectionHeading } from "@/components/ui/section-heading";
+
+type Detail = { icon: IconName; title: string; text: string };
+export function CommercePage({ eyebrow, title, description, image, sectionTitle, sectionText, details }: { eyebrow: string; title: React.ReactNode; description: string; image: string; sectionTitle: React.ReactNode; sectionText: string; details: Detail[] }) {
+  return <main><PageHero eyebrow={eyebrow} title={title} description={description} image={image}/><section className="bg-cream py-20 sm:py-28"><div className="container"><SectionHeading eyebrow="Titan Fruit" title={sectionTitle} intro={sectionText}/><div className="mt-11 grid gap-4 md:grid-cols-3">{details.map((detail) => <article key={detail.title} className="rounded-3xl border border-forest/10 bg-white p-7"><Icon name={detail.icon} className="h-8 w-8 text-leaf"/><h3 className="mt-7 text-xl font-bold tracking-[-.04em] text-forest">{detail.title}</h3><p className="mt-3 text-sm leading-6 text-ink/65">{detail.text}</p></article>)}</div></div></section><section className="container py-20 sm:py-28"><div className="overflow-hidden rounded-4xl bg-forest text-white lg:grid lg:grid-cols-[.92fr_1.08fr]"><div className="flex items-center px-7 py-14 sm:px-12"><div><p className="eyebrow text-lime">Let's work together</p><h2 className="display mt-5 text-4xl font-bold sm:text-5xl">Looking for a specific solution?</h2><p className="mt-5 max-w-md text-base leading-7 text-white/75">Tell us what you are looking for and explore how Titan Fruit can support your product requirements.</p><Button href="/en/contact" tone="lime" className="mt-8">GET IN TOUCH</Button></div></div><div className="relative min-h-[300px]"><Image src={image} alt="Temporary Titan Fruit editorial photography" fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-cover"/></div></div></section></main>;
+}
