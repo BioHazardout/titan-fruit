@@ -17,7 +17,7 @@ const commitments: Array<{ icon: IconName; title: string; text: string }> = [
 ];
 
 const details: Array<{ icon: IconName; label: string; value: string }> = [
-  { icon: "certificate", label: "Authorization number", value: "001054-MIDAGRI-SENASA-LIMACALLAO" },
+  { icon: "certificate", label: "Authorization number", value: "001054-MIDAGRI-SENASA-LIMA CALLAO" },
   { icon: "factory", label: "Authorization", value: "Primary processing of agricultural foods of plant origin" },
   { icon: "globe", label: "Quality system", value: "Traceable controls from origin to dispatch" },
   { icon: "calendar", label: "Document", value: "Official SENASA authorization certificate" },
