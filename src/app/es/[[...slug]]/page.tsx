@@ -15,7 +15,7 @@ export default async function SpanishPage({ params }: { params: Promise<{ slug?:
     case "": return <EnglishHome />;
     case "fruta-fresca": return <FreshFruitPage />;
     case "iqf-congelados": return <IqfFrozenPage />;
-    case "servicios-maquila": return <MaquilaPage />;
+    case "servicios-maquila": return <MaquilaPage locale="es" />;
     case "nuestra-planta": return <FacilityRoutePage />;
     case "nosotros": return <AboutRoutePage />;
     case "calidad-certificaciones": return <QualityRoutePage />;

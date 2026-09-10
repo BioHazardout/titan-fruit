@@ -1,20 +1,25 @@
 import { images } from "./images";
 
-export type Product = { id: string; slug: string; name: string; category: "fruit" | "vegetable"; image: string; featured?: boolean; description?: string };
+export type Product = { id: string; slug: string; name: string; nameEs?: string; category: "fruit" | "vegetable"; image: string; featured?: boolean; description?: string };
 
 export const products: Product[] = [
-  { id:"hass-avocado", slug:"hass-avocado", name:"Hass Avocado", category:"fruit", image:images.avocado, featured:true },
-  { id:"dragon-fruit", slug:"dragon-fruit", name:"Dragon Fruit", category:"fruit", image:images.dragonFruit, featured:true },
-  { id:"granadilla", slug:"granadilla", name:"Granadilla", category:"fruit", image:images.granadilla, featured:true },
-  { id:"blueberries", slug:"blueberries", name:"Blueberries", category:"fruit", image:images.blueberries, featured:true },
-  { id:"passion-fruit", slug:"passion-fruit", name:"Passion Fruit", category:"fruit", image:images.passionFruit, featured:true },
-  { id:"strawberries", slug:"strawberries", name:"Strawberries", category:"fruit", image:images.strawberries, featured:true },
-  { id:"selected-fruit-01", slug:"selected-fruit-01", name:"Selected Fruit", category:"fruit", image:images.passionFruit, description:"Product details pending confirmation." },
-  { id:"selected-fruit-02", slug:"selected-fruit-02", name:"Selected Fruit", category:"fruit", image:images.granadilla, description:"Product details pending confirmation." },
-  { id:"aji", slug:"aji", name:"Ají", category:"vegetable", image:images.aji, featured:true },
-  { id:"garlic", slug:"garlic", name:"Garlic", category:"vegetable", image:images.garlic, featured:true },
-  { id:"paprika", slug:"paprika", name:"Paprika", category:"vegetable", image:images.paprika, featured:true },
-  { id:"peppers", slug:"peppers", name:"Peppers", category:"vegetable", image:images.peppers, featured:true },
-  { id:"selected-vegetable-01", slug:"selected-vegetable-01", name:"Selected Vegetable", category:"vegetable", image:images.aji, description:"Product details pending confirmation." },
-  { id:"selected-vegetable-02", slug:"selected-vegetable-02", name:"Selected Vegetable", category:"vegetable", image:images.garlic, description:"Product details pending confirmation." },
+  { id:"palta", slug:"palta", name:"Hass Avocado", nameEs:"Palta", category:"fruit", image:images.palta, featured:true },
+  { id:"pitahaya", slug:"pitahaya", name:"Dragon Fruit", nameEs:"Pitahaya", category:"fruit", image:images.pitahaya, featured:true },
+  { id:"granadilla", slug:"granadilla", name:"Granadilla", nameEs:"Granadilla", category:"fruit", image:images.granadillaFruit, featured:true },
+  { id:"arandanos", slug:"arandanos", name:"Blueberries", nameEs:"Arándanos", category:"fruit", image:images.arandanos, featured:true },
+  { id:"maracuya", slug:"maracuya", name:"Passion Fruit", nameEs:"Maracuyá", category:"fruit", image:images.maracuya, featured:true },
+  { id:"fresas", slug:"fresas", name:"Strawberries", nameEs:"Fresas", category:"fruit", image:images.fresas, featured:true },
+  { id:"aguaymanto", slug:"aguaymanto", name:"Goldenberry", nameEs:"Aguaymanto", category:"fruit", image:images.aguaymanto, featured:true },
+  { id:"chirimoya", slug:"chirimoya", name:"Cherimoya", nameEs:"Chirimoya", category:"fruit", image:images.chirimoya, featured:true },
+  { id:"guanabana", slug:"guanabana", name:"Soursop", nameEs:"Guanábana", category:"fruit", image:images.guanabana, featured:true },
+  { id:"mandarina", slug:"mandarina", name:"Mandarin", nameEs:"Mandarina", category:"fruit", image:images.mandarina, featured:true },
+  { id:"pina", slug:"pina", name:"Pineapple", nameEs:"Piña", category:"fruit", image:images.pina, featured:true },
+  { id:"tuna", slug:"tuna", name:"Prickly Pear", nameEs:"Tuna", category:"fruit", image:images.tuna, featured:true },
+  { id:"aji-amarillo", slug:"aji-amarillo", name:"Yellow Chili Pepper", nameEs:"Ají Amarillo", category:"vegetable", image:images.ajiAmarillo, featured:true },
+  { id:"aji-limo", slug:"aji-limo", name:"Limo Chili Pepper", nameEs:"Ají Limo", category:"vegetable", image:images.ajiLimo, featured:true },
+  { id:"pimiento", slug:"pimiento", name:"Bell Pepper", nameEs:"Pimiento", category:"vegetable", image:images.pimiento, featured:true },
+  { id:"rocoto", slug:"rocoto", name:"Rocoto Pepper", nameEs:"Rocoto", category:"vegetable", image:images.rocoto, featured:true },
+  { id:"ajo", slug:"ajo", name:"Garlic", nameEs:"Ajo", category:"vegetable", image:images.ajo, featured:true },
+  { id:"paprika", slug:"paprika", name:"Paprika", nameEs:"Páprika", category:"vegetable", image:images.paprikaProduct, featured:true },
+  { id:"kion", slug:"kion", name:"Ginger", nameEs:"Kión", category:"vegetable", image:images.kion, featured:true },
 ];

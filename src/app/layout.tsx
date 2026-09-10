@@ -39,5 +39,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><ScrollMotion />{children}</body></html>;
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <ScrollMotion />
+        {children}
+      </body>
+    </html>
+  );
 }

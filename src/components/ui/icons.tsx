@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-export type IconName = "arrow" | "chevron" | "leaf" | "globe" | "snow" | "factory" | "shield" | "certificate" | "spark" | "package" | "truck" | "search" | "user" | "users" | "calendar" | "mail" | "pin" | "phone" | "menu" | "close";
+export type IconName = "arrow" | "chevron" | "leaf" | "globe" | "snow" | "factory" | "shield" | "certificate" | "spark" | "package" | "truck" | "search" | "user" | "users" | "calendar" | "mail" | "pin" | "phone" | "menu" | "close" | "expand" | "chart" | "building" | "check";
 
 export function Icon({ name, className = "", ...props }: { name: IconName; className?: string } & SVGProps<SVGSVGElement>) {
   const common = { fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
@@ -25,6 +25,10 @@ export function Icon({ name, className = "", ...props }: { name: IconName; class
     phone: <><path d="M6.5 3.5 9 3l2 4-2 1.5a13 13 0 0 0 6.5 6.5L17 13l4 2-.5 2.5c-.3 1.5-1.7 2.5-3.2 2.2C10 18.5 5.5 14 4.3 6.7 4 5.2 5 3.8 6.5 3.5Z"/></>,
     menu: <><path d="M4 7h16M4 12h16M4 17h16"/></>,
     close: <><path d="m5 5 14 14M19 5 5 19"/></>,
+    expand: <><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></>,
+    chart: <><path d="M18 20V10M12 20V4M6 20v-6"/><path d="M3 20h18"/></>,
+    building: <><path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M14 10h4a2 2 0 0 1 2 2v9M4 21h18M8 7h.01M8 11h.01M8 15h.01M12 7h.01M12 11h.01M12 15h.01M17 14h.01M17 18h.01"/></>,
+    check: <path d="M20 6 9 17l-5-5"/>,
   };
   return <svg viewBox="0 0 24 24" aria-hidden="true" className={className} {...common} {...props}>{shapes[name]}</svg>;
 }

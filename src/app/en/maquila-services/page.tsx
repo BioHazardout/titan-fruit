@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { CommercePage } from "@/components/pages/commerce-page";
-import { images } from "@/data/images";
-export const metadata: Metadata = { title:"Maquila Services", description:"Processing and packing solutions for your business.", alternates:{ canonical:"/en/maquila-services" } };
-export default function MaquilaPage() { return <CommercePage eyebrow="Processing partnership" title={<>Maquila<br/>Services</>} description="Processing and packing solutions for your business, delivered through an integrated Peruvian partner." image={images.maquila} sectionTitle={<>Flexible processing.<br/>A trusted partner.</>} sectionText="A commercial path for partners looking for processing and packing solutions." details={[{ icon:"factory", title:"Processing", text:"Processing solutions designed around your business needs." }, { icon:"certificate", title:"Authorized Facility", text:"Primary processing takes place in our SENASA-authorized facility." }, { icon:"globe", title:"Global Perspective", text:"Built for international B2B supply requirements." }]}/>; }
+import { MaquilaPage as MaquilaLandingPage } from "@/components/pages/maquila-page";
+
+export const metadata: Metadata = {
+  title: "Maquila Services",
+  description: "SENASA-certified packing, processing, and export solutions in Peru.",
+  alternates: { canonical: "/en/maquila-services" },
+};
+
+export default function MaquilaPage({ locale = "en" }: { locale?: "en" | "es" } = {}) {
+  return <MaquilaLandingPage locale={locale} />;
+}
