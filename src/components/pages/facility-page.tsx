@@ -34,7 +34,7 @@ const stats: { icon: IconName; value: string; text: string }[] = [
 export function FacilityPage() {
   return <main>
     <section className="relative isolate h-[calc(100svh-60px)] min-h-[590px] overflow-hidden bg-forest text-white lg:min-h-0">
-      <Image src={images.facility} priority fill sizes="100vw" alt="Titan Fruit facility operations" className="object-cover object-center" />
+      <Image src={images.facilityHero} priority fill sizes="100vw" alt="Titan Fruit facility operations" className="object-cover object-center" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#021e10]/95 via-[#021e10]/78 to-[#021e10]/20" />
       <div className="container relative flex h-full items-center py-12 sm:py-16"><div className="max-w-2xl">
         <p className="eyebrow text-lime">Our facilities</p>
