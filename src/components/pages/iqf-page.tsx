@@ -6,10 +6,10 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { images } from "@/data/images";
 
 const frozenProducts = [
-  { name: "IQF Frozen Avocado", slug: "hass-avocado", image: images.avocado, description: "Creamy texture and natural flavor, perfect for guacamole, dips, smoothies and foodservice.", applications: ["Guacamole & dips", "Smoothies", "Foodservice", "Food manufacturing"] },
-  { name: "IQF Frozen Dragon Fruit (American Beauty)", slug: "dragon-fruit", image: images.fresh, description: "Vibrant color and exotic flavor, ideal for smoothies, beverages, desserts and more.", applications: ["Smoothies & juices", "Beverages", "Desserts", "Bakery"] },
-  { name: "IQF Frozen Blueberries", slug: "blueberries", image: images.blueberries, description: "Bursting with flavor and antioxidants, perfect for a wide range of food applications.", applications: ["Bakery", "Smoothies", "Yogurt & dairy", "Food manufacturing"] },
-  { name: "IQF Frozen Strawberries", slug: "strawberries", image: images.strawberries, description: "Sweet, juicy and convenient. Perfect for desserts, smoothies, bakery and more.", applications: ["Bakery", "Smoothies", "Desserts", "Ice cream & dairy"] },
+  { name: "IQF Frozen Avocado", slug: "hass-avocado", image: images.iqPalta, description: "Creamy texture and natural flavor, perfect for guacamole, dips, smoothies and foodservice.", applications: ["Guacamole & dips", "Smoothies", "Foodservice", "Food manufacturing"] },
+  { name: "IQF Frozen Dragon Fruit (American Beauty)", slug: "dragon-fruit", image: images.iqPitahaya, description: "Vibrant color and exotic flavor, ideal for smoothies, beverages, desserts and more.", applications: ["Smoothies & juices", "Beverages", "Desserts", "Bakery"] },
+  { name: "IQF Frozen Blueberries", slug: "blueberries", image: images.iqArandano, description: "Bursting with flavor and antioxidants, perfect for a wide range of food applications.", applications: ["Bakery", "Smoothies", "Yogurt & dairy", "Food manufacturing"] },
+  { name: "IQF Frozen Strawberries", slug: "strawberries", image: images.iqFresa, description: "Sweet, juicy and convenient. Perfect for desserts, smoothies, bakery and more.", applications: ["Bakery", "Smoothies", "Desserts", "Ice cream & dairy"] },
 ] as const;
 
 const reasons: { icon: IconName; title: string; text: string }[] = [
@@ -30,7 +30,7 @@ const benefits: { icon: IconName; title: string; text: string }[] = [
 export function IqfPage() {
   return <main>
     <section className="relative isolate h-[calc(100svh-60px)] min-h-[590px] overflow-hidden bg-[#071529] text-white lg:min-h-0">
-      <Image src={images.fresh} priority fill sizes="100vw" alt="Dragon fruit prepared for IQF freezing" className="object-cover object-center" />
+      <Image src={images.iqFrozenHero} priority fill sizes="100vw" alt="IQF frozen fruit from Peru" className="object-cover object-center" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#071529]/95 via-[#071529]/78 to-[#071529]/20" />
       <div className="container relative flex h-full items-center py-10 sm:py-16"><div className="max-w-2xl">
         <p className="eyebrow text-[#69a8ff]">IQF frozen fruit solutions</p>
