@@ -26,7 +26,7 @@ const details: Array<{ icon: IconName; label: string; value: string }> = [
 export function QualityPage() {
   return <main>
     <section className="relative isolate h-[calc(100svh-60px)] min-h-[590px] overflow-hidden bg-forest text-white lg:h-[calc(100svh-80px)] lg:min-h-0">
-      <Image src={images.fresh} alt="Titan Fruit quality and processing" priority fill sizes="100vw" className="object-cover object-center" />
+      <Image src={images.qualityHero} alt="Titan Fruit quality and processing" priority fill sizes="100vw" className="object-cover object-center" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#021e10]/95 via-[#021e10]/78 to-[#021e10]/18" />
       <div className="container relative flex h-full items-center py-12"><div className="max-w-2xl"><Icon name="certificate" className="h-14 w-14 text-lime" /><p className="eyebrow mt-8 text-lime">Titan Fruit standards</p><h1 className="display mt-5 text-5xl font-bold uppercase sm:text-6xl lg:text-7xl">Quality &amp;<br /><span className="text-lime">certifications</span></h1><div className="mt-6 h-0.5 w-20 bg-lime" /><p className="mt-5 max-w-lg text-base leading-7 text-white/85">We ensure safe, traceable fruit of the highest quality, meeting the most demanding national and international standards.</p></div></div>
     </section>

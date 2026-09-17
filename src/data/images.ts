@@ -23,4 +23,6 @@ export const images = {
   kion: "/images/company/kion_fruit_660_600.webp",
   maquilaHero: "/images/company/maquila_titanfruit.webp", maquilaSolution1: "/images/company/solution1.webp", maquilaSolution2: "/images/company/solution2.webp", maquilaSolution3: "/images/company/solution3.webp", maquilaSolution4: "/images/company/solution4.webp", maquilaCard1: "/images/company/solution5.webp", maquilaCard2: "/images/company/solution6.webp", maquilaCard3: "/images/company/solution7.webp",
   nosotrosSection: "/images/company/nosotros-titanfruit-section.webp",
+  nosotrosSection2: "/images/company/nosotros_titanfruit_section2.webp",
+  qualityHero: "/images/company/calidad_certificacion_titanfruit.webp",
 } as const;
