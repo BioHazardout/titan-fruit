@@ -25,7 +25,7 @@ const flow: { icon: IconName; title: string; image: string }[] = [
 ];
 
 const stats: { icon: IconName; value: string; text: string }[] = [
-  { icon: "pin", value: "20 KM FROM", text: "Callao Port" },
+  { icon: "pin", value: "20 KM FROM", text: "distance from Callao port and airport" },
   { icon: "certificate", value: "SENASA", text: "Authorized for primary processing" },
   { icon: "shield", value: "Quality", text: "Food quality and safety standards" },
   { icon: "users", value: "Our team", text: "Skilled professionals committed to quality" },

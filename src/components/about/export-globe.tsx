@@ -1,11 +1,13 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import countriesTopo from "world-atlas/countries-110m.json";
 import { feature } from "topojson-client";
 import { AmbientLight, Color, DirectionalLight, MeshPhongMaterial } from "three";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { GlobeInstance } from "globe.gl";
+import { getCountryDisplayName } from "@/data/country-names";
 
 const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
 
@@ -39,6 +41,8 @@ const routes: Route[] = [
 const countryNames: Record<number, string> = { 604: "Peru", 840: "United States", 250: "France", 276: "Germany", 380: "Italy", 724: "Spain", 826: "United Kingdom", 528: "Netherlands" };
 
 export function ExportGlobe() {
+  const pathname = usePathname();
+  const isSpanish = pathname?.startsWith("/es") ?? false;
   const globeRef = useRef<GlobeInstance | undefined>(undefined);
   const hostRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 360, height: 360 });
@@ -75,9 +79,23 @@ export function ExportGlobe() {
     <div className="globe-stars absolute inset-0 opacity-70" aria-hidden="true" />
     <div className="relative flex items-start justify-between gap-4 text-white"><div><p className="eyebrow text-lime">Global supply</p><p className="mt-2 text-sm text-white/70">Peru connected to key markets.</p></div><button type="button" onClick={() => setPaused((value) => !value)} className="rounded-full border border-white/20 px-3 py-2 text-[10px] font-bold uppercase tracking-[.08em] text-white/80 transition hover:border-lime hover:text-lime">{paused ? "Resume globe" : "Pause globe"}</button></div>
     <div ref={hostRef} className="relative z-10 mx-auto mt-2 overflow-hidden rounded-full" style={{ width: size.width, height: size.height }}>
-      <Globe ref={globeRef} width={size.width} height={size.height} backgroundColor="rgba(0,0,0,0)" globeMaterial={material} showAtmosphere atmosphereColor="#8be4d1" atmosphereAltitude={0.12} showGraticules polygonsData={countries as object[]} polygonGeoJsonGeometry={(country) => (country as Country).geometry as never} polygonCapColor={(country) => Number((country as Country).id) === peruId ? "#d5ed5a" : priorityCountries.has(Number((country as Country).id)) ? "#2d6653" : "#164b50"} polygonSideColor={() => "rgba(2,30,16,.46)"} polygonStrokeColor={() => "rgba(159,238,222,.35)"} polygonAltitude={(country) => Number((country as Country).id) === peruId ? 0.035 : 0.008} polygonLabel={(country) => `<div style="padding:6px 8px;font:600 12px Arial;color:#021e10;background:#d5ed5a;border-radius:6px">${countryNames[Number((country as Country).id)] || "Country"}</div>`} pointsData={places} pointLat="lat" pointLng="lng" pointColor="color" pointAltitude={(point) => (point as Place).name === "Lima" ? 0.12 : 0.055} pointRadius={(point) => (point as Place).name === "Lima" ? 0.34 : 0.18} pointLabel={(point) => `<div style="padding:6px 8px;font:600 12px Arial;color:#fff;background:#021e10;border:1px solid rgba(213,237,90,.55);border-radius:6px">${(point as Place).label}</div>`} arcsData={routes} arcStartLat="startLat" arcStartLng="startLng" arcEndLat="endLat" arcEndLng="endLng" arcColor={() => ["#d5ed5a", "#8be4d1"]} arcAltitude={0.3} arcStroke={0.8} arcDashLength={0.42} arcDashGap={0.25} arcDashAnimateTime={2600} arcLabel={(route) => `<div style="padding:6px 8px;font:600 12px Arial;color:#fff;background:#021e10;border:1px solid rgba(213,237,90,.55);border-radius:6px">${(route as Route).name}</div>`} ringsData={[places[0]]} ringLat="lat" ringLng="lng" ringColor={() => ["#d5ed5a", "rgba(213,237,90,0)"]} ringMaxRadius={4} ringPropagationSpeed={1.5} ringRepeatPeriod={900} />
+      <Globe ref={globeRef} width={size.width} height={size.height} backgroundColor="rgba(0,0,0,0)" globeMaterial={material} showAtmosphere atmosphereColor="#8be4d1" atmosphereAltitude={0.12} showGraticules polygonsData={countries as object[]} polygonGeoJsonGeometry={(country) => (country as Country).geometry as never} polygonCapColor={(country) => Number((country as Country).id) === peruId ? "#d5ed5a" : priorityCountries.has(Number((country as Country).id)) ? "#2d6653" : "#164b50"} polygonSideColor={() => "rgba(2,30,16,.46)"} polygonStrokeColor={() => "rgba(159,238,222,.35)"} polygonAltitude={(country) => Number((country as Country).id) === peruId ? 0.035 : 0.008} polygonLabel={(country) => {
+        const c = country as Country;
+        const rawName = (c.properties?.name || countryNames[Number(c.id)] || "").trim();
+        const displayName = getCountryDisplayName(rawName, isSpanish);
+        if (!displayName) return "";
+        return `<div style="padding:6px 8px;font:600 12px Arial;color:#021e10;background:#d5ed5a;border-radius:6px">${displayName}</div>`;
+      }} pointsData={places} pointLat="lat" pointLng="lng" pointColor="color" pointAltitude={(point) => (point as Place).name === "Lima" ? 0.12 : 0.055} pointRadius={(point) => (point as Place).name === "Lima" ? 0.34 : 0.18} pointLabel={(point) => {
+        const p = point as Place;
+        const label = isSpanish ? (p.label === "Peru · Origin" ? "Perú · Origen" : p.label === "Peru · Growing region" ? "Perú · Zona de cultivo" : p.label === "United States" ? "Estados Unidos" : p.label === "Europe" ? "Europa" : p.label) : p.label;
+        return `<div style="padding:6px 8px;font:600 12px Arial;color:#fff;background:#021e10;border:1px solid rgba(213,237,90,.55);border-radius:6px">${label}</div>`;
+      }} arcsData={routes} arcStartLat="startLat" arcStartLng="startLng" arcEndLat="endLat" arcEndLng="endLng" arcColor={() => ["#d5ed5a", "#8be4d1"]} arcAltitude={0.3} arcStroke={0.8} arcDashLength={0.42} arcDashGap={0.25} arcDashAnimateTime={2600} arcLabel={(route) => {
+        const r = route as Route;
+        const name = isSpanish ? (r.name === "Peru to United States" ? "Perú hacia Estados Unidos" : r.name === "Peru to Europe" ? "Perú hacia Europa" : r.name) : r.name;
+        return `<div style="padding:6px 8px;font:600 12px Arial;color:#fff;background:#021e10;border:1px solid rgba(213,237,90,.55);border-radius:6px">${name}</div>`;
+      }} ringsData={[places[0]]} ringLat="lat" ringLng="lng" ringColor={() => ["#d5ed5a", "rgba(213,237,90,0)"]} ringMaxRadius={4} ringPropagationSpeed={1.5} ringRepeatPeriod={900} />
     </div>
-    <div className="relative mt-1 flex flex-wrap justify-center gap-x-5 gap-y-2 text-[10px] font-bold uppercase tracking-[.08em] text-white/70"><span className="flex items-center gap-2"><i className="h-2 w-2 rounded-full bg-lime" />Peru origin</span><span className="flex items-center gap-2"><i className="h-2 w-2 rounded-full bg-[#8be4d1]" />United States &amp; Europe</span></div>
+    <div className="relative mt-1 flex flex-wrap justify-center gap-x-5 gap-y-2 text-[10px] font-bold uppercase tracking-[.08em] text-white/70"><span className="flex items-center gap-2"><i className="h-2 w-2 rounded-full bg-lime" />Peru origin</span><span className="flex items-center gap-2"><i className="h-2 w-2 rounded-full bg-[#8be4d1]" />The world</span></div>
     <p className="relative mt-3 text-center text-xs text-white/60">Drag to rotate and zoom, or use the button to pause the automatic rotation.</p>
   </div>;
 }
