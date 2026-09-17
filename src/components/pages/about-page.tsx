@@ -5,7 +5,7 @@ import { Icon, type IconName } from "@/components/ui/icons";
 
 const highlights: Array<{ icon: IconName; value: string; label: string }> = [
   { icon: "certificate", value: "TOP 3", label: "Fresh dragon fruit exporters in Peru, 2023–2024" },
-  { icon: "globe", value: "+15", label: "Countries we export to" },
+  { icon: "globe", value: "One origin", label: "Infinite destinations" },
   { icon: "package", value: "Own packer", label: "Technology and quality protocols" },
   { icon: "users", value: "+500", label: "Trained and supported local growers" },
 ];
@@ -48,7 +48,7 @@ export function AboutPage() {
 
     <section className="bg-[#f6f3ea] py-16 sm:py-24"><div className="container grid items-center gap-10 lg:grid-cols-[.82fr_1.18fr] lg:gap-16">
       <div className="max-w-xl"><p className="eyebrow text-leaf">Who we are</p><h2 className="display mt-4 text-4xl font-bold text-forest sm:text-5xl">We are Titan Fruit</h2><p className="mt-6 text-base leading-7 text-ink/70">A Peruvian agro-export company that pioneered dragon fruit exports—among Peru&apos;s first fresh dragon fruit exporters in 2023 and 2024—and today brings that experience to more fruits for the world: avocado, blueberry, strawberry and dragon fruit, fresh and frozen.</p><div className="mt-8 rounded-2xl border border-forest/10 bg-white/55 p-5"><p className="text-sm font-bold text-forest">From the field to your hands.</p><p className="mt-2 text-sm leading-6 text-ink/65">With our own crops and specialized packing operations, we maintain control over product quality from origin to final destination.</p></div></div>
-      <div className="grid min-h-[420px] grid-cols-[1.18fr_.82fr] gap-4"><div className="photo-hover relative overflow-hidden rounded-3xl"><Image src={images.fresh} alt="Fresh Peruvian dragon fruit" fill sizes="(max-width: 1024px) 60vw, 38vw" className="object-cover" /></div><div className="grid gap-4"><div className="photo-hover relative min-h-[190px] overflow-hidden rounded-3xl"><Image src={images.facility} alt="Titan Fruit facility" fill sizes="(max-width: 1024px) 40vw, 25vw" className="object-cover" /></div><div className="photo-hover relative min-h-[190px] overflow-hidden rounded-3xl"><Image src={images.dragonFruit} alt="Fresh dragon fruit" fill sizes="(max-width: 1024px) 40vw, 25vw" className="object-cover" /></div></div></div>
+      <div className="photo-hover relative aspect-[16/10] w-full overflow-hidden rounded-3xl shadow-[0_12px_32px_rgba(16,61,53,.08)]"><Image src={images.nosotrosSection} alt="Titan Fruit" fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-cover" /></div>
     </div></section>
 
     <section className="bg-forest py-9 text-white sm:py-11"><div className="container grid gap-7 sm:grid-cols-2 lg:grid-cols-4">{highlights.map((item) => <article key={item.value} className="flex items-start gap-4 border-white/20 sm:border-l sm:pl-6 first:border-0 first:pl-0"><Icon name={item.icon} className="h-9 w-9 shrink-0 text-lime" /><div><p className="text-xl font-bold uppercase tracking-[.03em] text-lime">{item.value}</p><p className="mt-1 text-xs leading-5 text-white/75">{item.label}</p></div></article>)}</div></section>

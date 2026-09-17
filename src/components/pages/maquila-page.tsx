@@ -84,7 +84,7 @@ const maquilaContent = {
     trustBanner: {
       title: "Respaldo que genera confianza",
       items: [
-        { icon: "building" as IconName, label: "Planta propia", sublabel: "+ 2,000 m²" },
+        { icon: "building" as IconName, label: "Planta propia", sublabel: "+ 500 m²" },
         { icon: "certificate" as IconName, label: "Autorización", sublabel: "SENASA" },
         { icon: "shield" as IconName, label: "Estándares", sublabel: "de calidad" },
         { icon: "users" as IconName, label: "Equipo técnico", sublabel: "especializado" },
@@ -164,7 +164,7 @@ const maquilaContent = {
     trustBanner: {
       title: "Support that builds trust",
       items: [
-        { icon: "building" as IconName, label: "Own plant", sublabel: "+ 2,000 m²" },
+        { icon: "building" as IconName, label: "Own plant", sublabel: "+ 500 m²" },
         { icon: "certificate" as IconName, label: "Authorization", sublabel: "SENASA" },
         { icon: "shield" as IconName, label: "Quality", sublabel: "standards" },
         { icon: "users" as IconName, label: "Technical team", sublabel: "specialized" },
@@ -287,7 +287,7 @@ export function MaquilaPage({ locale: propLocale }: Props) {
                   </div>
 
                   {/* Card Body */}
-                  <div className="p-6 pt-3">
+                  <div className="p-6 pt-3 pb-6">
                     <div className="flex items-baseline gap-3">
                       <span className="text-2xl font-bold tracking-tight text-[#76bd38]">
                         {card.number}
@@ -313,17 +313,6 @@ export function MaquilaPage({ locale: propLocale }: Props) {
                       ))}
                     </ul>
                   </div>
-                </div>
-
-                {/* Card CTA button */}
-                <div className="p-6 pt-0">
-                  <Link
-                    href={card.href}
-                    className="flex w-full items-center justify-center gap-2 rounded-lg border border-[#2d6653]/40 bg-transparent py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-forest transition-all duration-300 group-hover:border-[#021e10] group-hover:bg-[#021e10] group-hover:text-white"
-                  >
-                    <span>{card.cta}</span>
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                  </Link>
                 </div>
               </article>
             ))}
