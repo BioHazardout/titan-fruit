@@ -166,8 +166,8 @@ const maquilaContent = {
       items: [
         { icon: "building" as IconName, label: "Own plant", sublabel: "+ 500 m²" },
         { icon: "certificate" as IconName, label: "Authorization", sublabel: "SENASA" },
-        { icon: "shield" as IconName, label: "Quality", sublabel: "standards" },
-        { icon: "users" as IconName, label: "Technical team", sublabel: "specialized" },
+        { icon: "shield" as IconName, label: "Quality", sublabel: "Standards" },
+        { icon: "users" as IconName, label: "Technical team", sublabel: "Specialized" },
       ],
     },
   },
