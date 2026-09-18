@@ -25,4 +25,9 @@ export const images = {
   nosotrosSection: "/images/company/nosotros-titanfruit-section.webp",
   nosotrosSection2: "/images/company/nosotros_titanfruit_section2.webp",
   qualityHero: "/images/company/calidad_certificacion_titanfruit.webp",
+  ccalidad1: "/images/company/ccalidad1.webp",
+  ccalidad2: "/images/company/ccalidad2.webp",
+  ccalidad3: "/images/company/ccalidad3.webp",
+  ccalidad4: "/images/company/ccalidad4.webp",
+  nosotros10: "/images/company/nosotros10.webp",
 } as const;

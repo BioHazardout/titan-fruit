@@ -11,17 +11,17 @@ const highlights: Array<{ icon: IconName; value: string; label: string }> = [
 ];
 
 const products = [
-  { title: "Fresh dragon fruit", image: images.dragonFruit },
-  { title: "IQF dragon fruit", image: images.frozen },
-  { title: "IQF avocado", image: images.avocado },
-  { title: "IQF blueberries", image: images.blueberries },
-  { title: "IQF strawberries", image: images.strawberries },
+  { title: "Fresh dragon fruit", image: images.pitahaya },
+  { title: "IQF dragon fruit", image: images.iqPitahaya },
+  { title: "IQF avocado", image: images.iqPalta },
+  { title: "IQF blueberries", image: images.iqArandano },
+  { title: "IQF strawberries", image: images.iqFresa },
 ];
 
 const infrastructure = [
   { title: "Selection and packing line", image: images.maquila },
-  { title: "Next-generation cold storage", image: images.frozen },
-  { title: "Storage and dispatch", image: images.facility },
+  { title: "Next-generation cold storage", image: images.ccalidad4 },
+  { title: "Storage and dispatch", image: images.nosotros10 },
 ];
 
 const benefits: Array<{ icon: IconName; title: string; text: string }> = [

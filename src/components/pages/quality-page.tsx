@@ -3,10 +3,10 @@ import { Icon, type IconName } from "@/components/ui/icons";
 import { images } from "@/data/images";
 
 const pillars: Array<{ icon: IconName; title: string; text: string; image: string }> = [
-  { icon: "certificate", title: "SENASA authorized", text: "Authorized facility for primary processing.", image: images.europe },
-  { icon: "package", title: "Traceability", text: "Traceability by lot from origin to destination.", image: images.fresh },
-  { icon: "search", title: "Quality control", text: "Quality inspection throughout the process.", image: images.dragonFruit },
-  { icon: "snow", title: "Cold chain", text: "Precise temperature handling and preservation.", image: images.frozen },
+  { icon: "certificate", title: "SENASA authorized", text: "Authorized facility for primary processing.", image: images.ccalidad1 },
+  { icon: "package", title: "Traceability", text: "Traceability by lot from origin to destination.", image: images.ccalidad2 },
+  { icon: "search", title: "Quality control", text: "Quality inspection throughout the process.", image: images.ccalidad3 },
+  { icon: "snow", title: "Cold chain", text: "Precise temperature handling and preservation.", image: images.ccalidad4 },
 ];
 
 const commitments: Array<{ icon: IconName; title: string; text: string }> = [
