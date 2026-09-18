@@ -3,14 +3,14 @@ import { Icon, type IconName } from "@/components/ui/icons";
 import { images } from "@/data/images";
 
 const areas: { number: string; title: string; text: string; image: string }[] = [
-  { number: "01", title: "Exterior", text: "Modern and secure facilities.", image: images.europe },
-  { number: "02", title: "Reception", text: "Fruit reception and verification.", image: images.facility },
-  { number: "03", title: "Selection", text: "Manual selection to ensure quality.", image: images.fresh },
-  { number: "04", title: "Processing", text: "Efficient processes with the right equipment.", image: images.maquila },
-  { number: "05", title: "Packing", text: "Careful packing to protect the fruit.", image: images.fresh },
-  { number: "06", title: "Cold Storage", text: "Optimal preservation in controlled environments.", image: images.frozen },
-  { number: "07", title: "Quality Control", text: "Analysis and controls at every stage of the process.", image: images.avocado },
-  { number: "08", title: "Dispatch", text: "Preparation and dispatch for export.", image: images.usa },
+  { number: "01", title: "Exterior", text: "Modern and secure facilities.", image: images.maquilaTitanfruit },
+  { number: "02", title: "Reception", text: "Fruit reception and verification.", image: images.solution7 },
+  { number: "03", title: "Selection", text: "Manual selection to ensure quality.", image: images.solution2 },
+  { number: "04", title: "Processing", text: "Efficient processes with the right equipment.", image: images.procesamientootitan },
+  { number: "05", title: "Packing", text: "Careful packing to protect the fruit.", image: images.solution6 },
+  { number: "06", title: "Cold Storage", text: "Optimal preservation in controlled environments.", image: images.nosotros10 },
+  { number: "07", title: "Quality Control", text: "Analysis and controls at every stage of the process.", image: images.ccalidad1 },
+  { number: "08", title: "Dispatch", text: "Preparation and dispatch for export.", image: images.ccalidad4 },
 ];
 
 const flow: { icon: IconName; title: string; image: string }[] = [
