@@ -35,7 +35,34 @@ export function QualityPage() {
 
     <section className="bg-[#021e10] py-10 text-white sm:py-12"><div className="container grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{commitments.map((commitment) => <article key={commitment.title} className="flex items-start gap-4 border-white/20 sm:border-l sm:pl-6 first:border-0 first:pl-0"><Icon name={commitment.icon} className="h-10 w-10 shrink-0 text-lime" /><div><h2 className="text-base font-bold uppercase leading-5">{commitment.title}</h2><p className="mt-2 text-sm leading-5 text-white/70">{commitment.text}</p></div></article>)}</div></section>
 
-    <section className="bg-[#f6f3ea] py-16 sm:py-24"><div className="container grid items-start gap-10 lg:grid-cols-[.78fr_1.22fr] lg:gap-14"><div><p className="eyebrow text-leaf">Official documentation</p><h2 className="display mt-4 text-4xl font-bold text-forest sm:text-5xl">SENASA health authorization</h2><p className="mt-5 max-w-xl text-base leading-7 text-ink/70">Our facility is authorized for the primary processing of agricultural foods of plant origin.</p><div className="mt-8 space-y-4">{details.map((detail) => <div key={detail.label} className="flex gap-3 border-b border-forest/10 pb-4"><Icon name={detail.icon} className="h-6 w-6 shrink-0 text-leaf" /><div><p className="text-xs font-bold uppercase tracking-[.07em] text-forest">{detail.label}</p><p className="mt-1 text-sm leading-5 text-ink/70">{detail.value}</p></div></div>)}</div><a href="/documents/senasa-authorization.pdf" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-3 rounded-lg bg-[#2d6653] px-6 py-4 text-xs font-bold uppercase tracking-[.08em] text-white transition hover:bg-forest">View certificate <Icon name="arrow" className="h-4 w-4 text-lime" /></a><p className="mt-3 text-xs text-ink/60">Opens the official PDF in a new tab.</p></div><div className="overflow-hidden rounded-2xl border border-forest/15 bg-white shadow-[0_14px_32px_rgba(16,61,53,.1)] lg:hidden"><a href="/documents/senasa-authorization.pdf" target="_blank" rel="noreferrer" className="block"><div className="relative aspect-[.68] bg-white"><Image src="/images/company/senasa-authorization.jpg" alt="SENASA authorization certificate" fill sizes="100vw" className="object-contain" /></div><div className="border-t border-forest/10 px-5 py-4 text-center text-xs font-bold uppercase tracking-[.08em] text-leaf">View certificate <Icon name="arrow" className="ml-2 inline h-4 w-4 text-leaf" /></div></a></div><div className="hidden overflow-hidden rounded-2xl border border-forest/15 bg-white shadow-[0_14px_32px_rgba(16,61,53,.1)] lg:block"><object data="/documents/senasa-authorization.pdf#view=FitH" type="application/pdf" className="h-[610px] w-full" aria-label="SENASA authorization document"><a href="/documents/senasa-authorization.pdf" target="_blank" rel="noreferrer" className="block p-8 text-leaf underline">View the SENASA authorization document.</a></object></div></div></section>
+    <section className="bg-[#f6f3ea] py-16 sm:py-24">
+      <div className="container grid items-start gap-10 lg:grid-cols-[.44fr_.56fr] lg:gap-16">
+        <div className="max-w-md">
+          <p className="eyebrow text-leaf">Official documentation</p>
+          <h2 className="display mt-4 text-4xl font-bold text-forest sm:text-5xl">SENASA health authorization</h2>
+          <p className="mt-5 text-base leading-7 text-ink/70">Our facility is authorized for the primary processing of agricultural foods of plant origin.</p>
+        </div>
+        <div className="max-w-xl">
+          <div className="divide-y divide-forest/10">
+            {details.map((detail) => (
+              <div key={detail.label} className="flex gap-4 py-5 first:pt-0 last:pb-6">
+                <Icon name={detail.icon} className="h-6 w-6 shrink-0 text-leaf" />
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[.07em] text-forest">{detail.label}</p>
+                  <p className="mt-1 text-sm leading-5 text-ink/70">{detail.value}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="pt-2">
+            <a href="/documents/senasa-authorization.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 rounded-lg bg-[#2d6653] px-6 py-4 text-xs font-bold uppercase tracking-[.08em] text-white transition hover:bg-forest">
+              View certificate <Icon name="arrow" className="h-4 w-4 text-lime" />
+            </a>
+            <p className="mt-3 text-xs text-ink/60">Opens the official PDF in a new tab.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section className="bg-forest text-white"><div className="grid overflow-hidden lg:grid-cols-[.40fr_.60fr]"><div className="relative min-h-[220px] lg:min-h-[240px]"><Image src={images.nosotrosSection2} alt="Titan Fruit grower in dragon fruit field" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-cover object-center" /></div><div className="flex items-center px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12"><div className="max-w-2xl"><div className="flex items-center gap-3.5 sm:gap-4"><Icon name="leaf" className="h-8 w-8 shrink-0 text-[#76bd38] sm:h-9 sm:w-9" /><h2 className="text-xl font-bold text-white sm:text-2xl">Committed to quality and the future</h2></div><p className="mt-3 text-xs leading-5 text-white/85 sm:mt-4 sm:text-sm sm:leading-6">We work every day to deliver fruit that meets the highest standards of quality and food safety, creating value for our customers, growers and the world.</p></div></div></div></section>
   </main>;

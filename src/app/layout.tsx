@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ScrollMotion } from "@/components/ui/scroll-motion";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { siteName, siteUrl, socialImage } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body suppressHydrationWarning>
         <ScrollMotion />
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

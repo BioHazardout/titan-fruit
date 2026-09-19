@@ -20,8 +20,8 @@ export function ProductCard({ product }: { product: Product }) {
           className="object-cover"
         />
       </div>
-      <div className="p-4">
-        <p className="mb-2 h-0.5 w-7 bg-lime transition-all group-hover:w-11" />
+      <div className="p-4 text-center">
+        <p className="mx-auto mb-2 h-0.5 w-7 bg-lime transition-all group-hover:w-11" />
         <h3 className="text-sm font-bold uppercase tracking-[.06em] text-forest">
           {displayName}
         </h3>

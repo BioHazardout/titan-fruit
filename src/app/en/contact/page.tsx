@@ -57,7 +57,5 @@ export default function ContactPage() {
         <ContactForm />
       </div>
     </section>
-
-    <section className="bg-forest py-14 text-white sm:py-16"><div className="container flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center"><div><p className="eyebrow text-lime">Peruvian origin. Global reach.</p><h2 className="mt-3 text-2xl font-bold sm:text-3xl">Ready to grow together?</h2></div><a href="#contact-form" className="group inline-flex items-center gap-3 rounded-full bg-lime px-6 py-4 text-xs font-bold uppercase tracking-[.1em] text-forest">Get in touch <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" /></a></div></section>
   </main>;
 }
