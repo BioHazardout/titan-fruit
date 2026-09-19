@@ -64,6 +64,29 @@ export function QualityPage() {
       </div>
     </section>
 
-    <section className="bg-forest text-white"><div className="grid overflow-hidden lg:grid-cols-[.40fr_.60fr]"><div className="relative min-h-[220px] lg:min-h-[240px]"><Image src={images.nosotrosSection2} alt="Titan Fruit grower in dragon fruit field" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-cover object-center" /></div><div className="flex items-center px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12"><div className="max-w-2xl"><div className="flex items-center gap-3.5 sm:gap-4"><Icon name="leaf" className="h-8 w-8 shrink-0 text-[#76bd38] sm:h-9 sm:w-9" /><h2 className="text-xl font-bold text-white sm:text-2xl">Committed to quality and the future</h2></div><p className="mt-3 text-xs leading-5 text-white/85 sm:mt-4 sm:text-sm sm:leading-6">We work every day to deliver fruit that meets the highest standards of quality and food safety, creating value for our customers, growers and the world.</p></div></div></div></section>
+    <section className="bg-forest text-white">
+      <div className="grid overflow-hidden lg:grid-cols-[.40fr_.60fr]">
+        <div className="relative min-h-[360px] sm:min-h-[440px] lg:min-h-[520px]">
+          <Image
+            src={images.nosotrosSection2}
+            alt="Titan Fruit grower in dragon fruit field"
+            fill
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            className="object-cover object-center"
+          />
+        </div>
+        <div className="flex items-center px-7 py-16 sm:px-12 sm:py-24 lg:px-16 lg:py-28">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3.5 sm:gap-4">
+              <Icon name="leaf" className="h-8 w-8 shrink-0 text-[#76bd38] sm:h-9 sm:w-9" />
+              <h2 className="text-xl font-bold text-white sm:text-2xl">Committed to quality and the future</h2>
+            </div>
+            <p className="mt-4 text-sm leading-6 text-white/85 sm:mt-5 sm:text-base sm:leading-7">
+              We work every day to deliver fruit that meets the highest standards of quality and food safety, creating value for our customers, growers and the world.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>;
 }
