@@ -10,19 +10,6 @@ const highlights: Array<{ icon: IconName; value: string; label: string }> = [
   { icon: "users", value: "+100 GROWERS", label: "Trained and supported local growers" },
 ];
 
-const products = [
-  { title: "Fresh dragon fruit", image: images.pitahaya },
-  { title: "IQF dragon fruit", image: images.iqPitahaya },
-  { title: "IQF avocado", image: images.iqPalta },
-  { title: "IQF blueberries", image: images.iqArandano },
-  { title: "IQF strawberries", image: images.iqFresa },
-];
-
-const infrastructure = [
-  { title: "Selection and packing line", image: images.maquila },
-  { title: "Next-generation cold storage", image: images.ccalidad4 },
-  { title: "Storage and dispatch", image: images.nosotros10 },
-];
 
 const benefits: Array<{ icon: IconName; title: string; text: string }> = [
   { icon: "shield", title: "Guaranteed quality", text: "Certified processes and controls at every step." },
@@ -52,10 +39,6 @@ export function AboutPage() {
 
     <section className="bg-forest py-9 text-white sm:py-11"><div className="container grid gap-7 sm:grid-cols-2 lg:grid-cols-4">{highlights.map((item) => <div key={item.value} className="flex items-start gap-4 border-white/20 sm:border-l sm:pl-6 first:border-0 first:pl-0"><Icon name={item.icon} className="h-9 w-9 shrink-0 text-lime" /><div><p className="text-xl font-bold uppercase tracking-[.03em] text-lime">{item.value}</p><p className="mt-1 text-xs leading-5 text-white/75">{item.label}</p></div></div>)}</div></section>
 
-    <section className="bg-[#f6f3ea] py-16 sm:py-24"><div className="container">
-      <div className="max-w-2xl"><p className="eyebrow text-leaf">What we do</p><h2 className="display mt-4 text-4xl font-bold text-forest sm:text-5xl">We grow, process and export fruit of the highest quality.</h2><div className="mt-6 flex max-w-2xl gap-3"><Icon name="globe" className="h-8 w-8 shrink-0 text-leaf" /><p className="text-sm leading-6 text-ink/70">Our field experience, infrastructure and quality processes enable us to deliver fresh Peruvian fruit to the world&apos;s most demanding markets.</p></div></div>
-      <div className="mt-12 grid gap-8 lg:grid-cols-[5fr_3fr]"><div><p className="eyebrow text-leaf">Our products</p><div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">{products.map((product) => <article key={product.title} className="group"><div className="photo-hover relative aspect-square overflow-hidden rounded-xl"><Image src={product.image} alt={product.title} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 12vw" className="object-cover" /></div><p className="mt-2 min-h-[32px] text-[10px] font-bold uppercase leading-4 text-forest transition-colors group-hover:text-leaf">{product.title}</p></article>)}</div></div><div><p className="eyebrow text-leaf">Our infrastructure</p><div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">{infrastructure.map((item) => <article key={item.title} className="group"><div className="photo-hover relative aspect-square overflow-hidden rounded-xl"><Image src={item.image} alt={item.title} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 12vw" className="object-cover" /></div><p className="mt-2 min-h-[32px] text-[10px] font-bold uppercase leading-4 text-forest transition-colors group-hover:text-leaf">{item.title}</p></article>)}</div></div></div>
-    </div></section>
 
     <section className="bg-[#eef0e8] py-16 sm:py-24"><div className="container grid items-center gap-10 lg:grid-cols-[.72fr_1.28fr]">
       <div><p className="eyebrow text-leaf">Where we operate</p><h2 className="display mt-4 text-4xl font-bold text-forest sm:text-5xl">We bring the best of Peru to the world.</h2><p className="mt-5 max-w-md text-sm leading-6 text-ink/70">We have the capacity to export to demanding markets such as North America, Europe, Asia, the Middle East and Latin America, meeting international standards.</p><ul className="mt-7 grid gap-3 text-sm font-semibold text-forest sm:grid-cols-2 lg:grid-cols-1">{["North America", "Europe", "Asia", "Middle East", "Latin America"].map((market) => <li key={market} className="flex items-center gap-2"><span className="grid h-5 w-5 place-items-center rounded-full border border-leaf text-[11px] text-leaf">✓</span>{market}</li>)}</ul></div>
