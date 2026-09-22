@@ -29,6 +29,7 @@ export const images = {
   solution5: "/images/company/solution5.webp",
   solution6: "/images/company/solution6.webp",
   solution7: "/images/company/solution7.webp",
+  solution10: "/images/company/solution10.webp",
   procesamientootitan: "/images/company/procesamientootitan.webp",
   nosotrosSection: "/images/company/nosotros-titanfruit-section.webp",
   nosotrosSection2: "/images/company/nosotros_titanfruit_section2.webp",

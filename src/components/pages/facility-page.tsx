@@ -6,7 +6,7 @@ const areas: { number: string; title: string; text: string; image: string }[] = 
   { number: "01", title: "Exterior", text: "Modern and secure facilities.", image: images.maquilaTitanfruit },
   { number: "02", title: "Reception", text: "Fruit reception and verification.", image: images.solution7 },
   { number: "03", title: "Selection", text: "Manual selection to ensure quality.", image: images.solution2 },
-  { number: "04", title: "Processing", text: "Efficient processes with the right equipment.", image: images.procesamientootitan },
+  { number: "04", title: "Processing", text: "Efficient processes with the right equipment.", image: images.solution10 },
   { number: "05", title: "Packing", text: "Careful packing to protect the fruit.", image: images.solution6 },
   { number: "06", title: "Cold Storage", text: "Optimal preservation in controlled environments.", image: images.nosotros10 },
   { number: "07", title: "Quality Control", text: "Analysis and controls at every stage of the process.", image: images.ccalidad1 },
