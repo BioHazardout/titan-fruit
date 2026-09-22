@@ -62,10 +62,12 @@ export function Header({ path: providedPath }: { path?: string }) {
     const previousHtmlOverflow = document.documentElement.style.overflow;
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
+    document.body.setAttribute("data-menu-open", "true");
     window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = previousBodyOverflow;
       document.documentElement.style.overflow = previousHtmlOverflow;
+      document.body.removeAttribute("data-menu-open");
       window.removeEventListener("keydown", onKey);
     };
   }, [mounted]);
@@ -73,7 +75,7 @@ export function Header({ path: providedPath }: { path?: string }) {
   const linkClass = (page: PageKey) => `whitespace-nowrap text-[10px] font-semibold uppercase tracking-[.055em] transition-colors xl:text-[11px] 2xl:text-[11.5px] ${page === currentPage ? "text-lime" : "text-white/75 hover:text-lime"}`;
   const mobileLinkClass = (page: PageKey) => `border-b border-white/10 py-5 text-base font-semibold transition-[color,opacity,transform] duration-300 ${visible ? "translate-x-0 opacity-100" : "translate-x-3 opacity-0"} ${page === currentPage ? "text-lime" : "text-white hover:text-lime"}`;
 
-  return <header className="sticky top-0 z-50 isolate overflow-visible bg-[#021e10]/95 text-white lg:backdrop-blur">
+  return <header className="sticky top-0 z-50 overflow-visible bg-[#021e10]/95 text-white lg:backdrop-blur">
     <div className="mx-auto flex h-[60px] w-full max-w-[92rem] items-center justify-between gap-3 px-4 sm:px-6 lg:h-[80px] lg:gap-4 lg:px-8 xl:gap-6 xl:px-10">
       <Brand locale={locale} />
 

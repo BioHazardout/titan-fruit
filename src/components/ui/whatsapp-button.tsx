@@ -32,7 +32,7 @@ export function WhatsAppButton() {
   return (
     <aside
       aria-label="WhatsApp contact"
-      className={`fixed bottom-5 right-5 z-50 transition-all duration-300 sm:bottom-6 sm:right-6 ${
+      className={`fixed bottom-5 right-5 z-30 transition-all duration-300 sm:bottom-6 sm:right-6 ${
         visible ? "scale-100 opacity-100 pointer-events-auto" : "scale-75 opacity-0 pointer-events-none"
       }`}
     >

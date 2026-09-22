@@ -27,6 +27,7 @@ main input, main textarea { font-size: 1rem; }
 }
 .scrollbar-none { scrollbar-width: none; }.scrollbar-none::-webkit-scrollbar { display:none; }
 .mobile-drawer { background-color: #021e10 !important; isolation: isolate; }
+body[data-menu-open="true"] aside[aria-label="WhatsApp contact"] { display: none !important; opacity: 0 !important; pointer-events: none !important; }
 .globe-stars { background-image: radial-gradient(circle at 14% 25%, rgba(255,255,255,.85) 0 1px, transparent 2px), radial-gradient(circle at 76% 18%, rgba(213,237,90,.7) 0 1px, transparent 2px), radial-gradient(circle at 84% 72%, rgba(255,255,255,.75) 0 1px, transparent 2px), radial-gradient(circle at 25% 82%, rgba(255,255,255,.6) 0 1px, transparent 2px), radial-gradient(circle at 57% 44%, rgba(213,237,90,.55) 0 1px, transparent 2px); background-size: 143px 151px, 197px 211px, 233px 181px, 179px 203px, 257px 217px; }
 .globe-stage { perspective: 1050px; cursor: grab; }.globe-stage:active { cursor: grabbing; }
 .globe-sphere { position:absolute; inset:7%; transform-style:preserve-3d; transition:transform .08s linear; filter:drop-shadow(0 22px 30px rgba(0,0,0,.45)); }

@@ -13,7 +13,7 @@ export function ContactForm() {
     const fields = isSpanish
       ? [["Nombre", form.get("name")], ["Empresa", form.get("company")], ["Correo electrónico", form.get("email")], ["Teléfono", form.get("phone")], ["Mensaje", form.get("message")]]
       : [["Name", form.get("name")], ["Company", form.get("company")], ["Email", form.get("email")], ["Phone", form.get("phone")], ["Message", form.get("message")]];
-    const subject = isSpanish ? "Nueva consulta desde titan-fruit.vercel.app" : "New inquiry from titan-fruit.vercel.app";
+    const subject = isSpanish ? "Nueva consulta desde titanfruitperu.com" : "New inquiry from titanfruitperu.com";
     const body = fields.map(([label, value]) => `${label}: ${String(value || "-")}`).join("\n");
     window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
