@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Icon, type IconName } from "@/components/ui/icons";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -24,7 +23,7 @@ const benefits: { icon: IconName; title: string; text: string }[] = [
   { icon: "certificate", title: "SENASA Authorized", text: "Primary processing of agricultural products of plant origin." },
   { icon: "shield", title: "Traceability", text: "From origin to final destination." },
   { icon: "leaf", title: "Sustainability", text: "Committed to responsible agriculture and the environment." },
-  { icon: "globe", title: "Experience", text: "Years of experience in fruit processing and export." },
+  { icon: "globe", title: "Experience", text: "Proven experience in the fruit industry." },
 ];
 
 export function IqfPage() {
@@ -46,7 +45,7 @@ export function IqfPage() {
 
     <section className="bg-[#f2f6fd] py-14 sm:py-20"><div className="container"><div className="mx-auto max-w-2xl text-center"><p className="eyebrow text-[#2f78d6]">Why choose Titan Fruit IQF?</p><h2 className="display mt-3 text-3xl font-bold uppercase text-[#10233e] sm:text-4xl">Built for quality and consistency.</h2></div><div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">{reasons.map((reason) => <div key={reason.title} className="text-center transition-none hover:transform-none hover:shadow-none"><Icon name={reason.icon} className="mx-auto h-10 w-10 text-[#2f78d6]" /><h3 className="mt-4 text-xs font-bold uppercase tracking-[.08em] text-[#10233e]">{reason.title}</h3><p className="mx-auto mt-2 max-w-[190px] text-xs leading-5 text-ink/65">{reason.text}</p></div>)}</div></div></section>
 
-    <section className="bg-[#071529] py-10 text-white sm:py-12"><div className="container flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between"><div><p className="text-sm font-bold uppercase tracking-[.14em] text-[#4d92ed] sm:text-base">Looking for a specific product</p><h2 className="display mt-2 text-3xl font-bold uppercase sm:text-4xl">Or custom solution?</h2><p className="mt-3 max-w-xl text-sm leading-6 text-white/75">We offer a wide range of IQF frozen fruits and custom formats to fit your business needs.</p></div><div className="flex flex-wrap gap-3"><Button href="/en/contact" className="bg-[#4d92ed] text-[#071529] hover:bg-white hover:text-[#071529]">REQUEST IQF QUOTE</Button><Link href="/en/contact" className="inline-flex items-center gap-3 rounded border border-white/60 px-5 py-3 text-xs font-bold uppercase tracking-[.08em] text-white transition hover:bg-white hover:text-[#071529]">Download brochure</Link></div></div></section>
+    <section className="bg-[#071529] py-10 text-white sm:py-12"><div className="container flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between"><div><h2 className="display text-3xl font-bold uppercase sm:text-4xl text-white">Looking for a specific product or a custom solution?</h2><p className="mt-3 max-w-xl text-sm leading-6 text-white/75">We offer a wide range of IQF frozen fruits and custom formats to fit your business needs.</p></div><div><Button href="/en/contact" className="bg-[#4d92ed] text-[#071529] hover:bg-white hover:text-[#071529]">REQUEST IQF QUOTE</Button></div></div></section>
 
     <section className="bg-white py-10 sm:py-12"><div className="container grid gap-7 sm:grid-cols-2 lg:grid-cols-4">{benefits.map((benefit) => <div key={benefit.title} className="flex gap-3 transition-none hover:transform-none hover:shadow-none"><Icon name={benefit.icon} className="h-8 w-8 shrink-0 text-[#2f78d6]" /><div><h3 className="text-xs font-bold uppercase tracking-[.1em] text-[#10233e]">{benefit.title}</h3><p className="mt-2 text-sm leading-5 text-ink/65">{benefit.text}</p></div></div>)}</div></section>
   </main>;

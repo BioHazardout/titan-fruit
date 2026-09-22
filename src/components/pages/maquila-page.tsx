@@ -97,7 +97,7 @@ const maquilaContent = {
       title: "MAQUILA SERVICES",
       description: "Infrastructure and experience to boost your exports.",
       indicators: [
-        { icon: "building" as IconName, title: "Certified own plant" },
+        { icon: "building" as IconName, title: "Certified In-House Facility" },
         { icon: "expand" as IconName, title: "Flexible capacity" },
         { icon: "shield" as IconName, title: "Quality and traceability" },
       ],
@@ -105,7 +105,7 @@ const maquilaContent = {
     solutions: {
       title: "Maquila solutions tailored to you",
       description:
-        "We offer you our SENASA-certified packing plant, modern infrastructure, and an expert team to ensure efficient, safe, and quality processes.",
+        "We provide a SENASA-certified packing plant, modern infrastructure, and an expert team to ensure efficient, safe, high-quality processes.",
       photos: [
         { src: images.maquilaSolution1, alt: "Fruit selection conveyor at packing facility" },
         { src: images.maquilaSolution2, alt: "Warehouse and staging facility operations" },
@@ -121,11 +121,11 @@ const maquilaContent = {
           number: "01",
           badgeIcon: "user" as IconName,
           title: "Agro-export entrepreneurs",
-          description: "Flexible volumes to turn your projects into reality.",
+          description: "Flexible volumes that help bring your projects to life.",
           bullets: [
             "Technical advice and continuous operational guidance.",
             "Minimum batches tailored to your growth stage.",
-            "Strict compliance with export standards and protocols.",
+            "Full compliance with export standards and protocols.",
           ],
           image: images.maquilaCard1,
           cta: "MORE INFORMATION",
@@ -138,8 +138,8 @@ const maquilaContent = {
           description: "Reliable and efficient processes for your business.",
           bullets: [
             "Full batch traceability from initial fruit reception.",
-            "Time optimization for timely market deliveries.",
-            "Strict control of quality, sizing, and ripeness.",
+            "Optimized timelines for on-time market deliveries.",
+            "Rigorous control over quality, sizing and ripeness.",
           ],
           image: images.maquilaCard2,
           cta: "MORE INFORMATION",
@@ -151,7 +151,7 @@ const maquilaContent = {
           title: "Agro-exporters with own packing",
           description: "Additional capacity to scale your exports.",
           bullets: [
-            "Supplemental operational capacity during campaign peaks.",
+            "Extra operational capacity during peak campaign periods.",
             "SENASA authorization and specialized technical backing.",
             "Flexibility across diverse packaging lines and formats.",
           ],
@@ -164,7 +164,7 @@ const maquilaContent = {
     trustBanner: {
       title: "Support that builds trust",
       items: [
-        { icon: "building" as IconName, label: "Own plant", sublabel: "+ 500 m²" },
+        { icon: "building" as IconName, label: "Own Facility", sublabel: "+ 500 m²" },
         { icon: "certificate" as IconName, label: "Authorization", sublabel: "SENASA" },
         { icon: "shield" as IconName, label: "Quality", sublabel: "Standards" },
         { icon: "users" as IconName, label: "Technical team", sublabel: "Specialized" },
