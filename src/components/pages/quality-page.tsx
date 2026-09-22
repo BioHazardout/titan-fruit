@@ -4,8 +4,8 @@ import { images } from "@/data/images";
 
 const pillars: Array<{ icon: IconName; title: string; text: string; image: string }> = [
   { icon: "certificate", title: "SENASA authorized", text: "Authorized facility for primary processing.", image: images.ccalidad1 },
-  { icon: "package", title: "Traceability", text: "Traceability by lot from origin to destination.", image: images.ccalidad2 },
-  { icon: "search", title: "Quality control", text: "Quality inspection throughout the process.", image: images.ccalidad3 },
+  { icon: "package", title: "Traceability", text: "Lot-level traceability from origin to destination.", image: images.ccalidad2 },
+  { icon: "search", title: "Quality control", text: "Inspection and control at every stage.", image: images.ccalidad3 },
   { icon: "snow", title: "Cold chain", text: "Precise temperature handling and preservation.", image: images.ccalidad4 },
 ];
 
@@ -13,12 +13,12 @@ const commitments: Array<{ icon: IconName; title: string; text: string }> = [
   { icon: "shield", title: "Food safety", text: "Safe and responsible processes." },
   { icon: "certificate", title: "Regulatory compliance", text: "Aligned with national and international standards." },
   { icon: "users", title: "Specialized team", text: "Trained, committed professionals." },
-  { icon: "leaf", title: "Continuous improvement", text: "We optimize every stage to deliver better." },
+  { icon: "leaf", title: "Continuous improvement", text: "We continually refine every stage to deliver better results." },
 ];
 
 const details: Array<{ icon: IconName; label: string; value: string }> = [
   { icon: "certificate", label: "Authorization number", value: "001054 - MIDAGRI - SENASA - LIMA CALLAO" },
-  { icon: "factory", label: "Authorization", value: "Primary processing of agricultural foods of plant origin" },
+  { icon: "factory", label: "Authorization", value: "Primary processing of plant-based agricultural food products" },
   { icon: "globe", label: "Quality system", value: "Traceable controls from origin to dispatch" },
   { icon: "calendar", label: "Document", value: "Official SENASA authorization certificate" },
 ];
@@ -40,7 +40,7 @@ export function QualityPage() {
         <div className="max-w-md">
           <p className="eyebrow text-leaf">Official documentation</p>
           <h2 className="display mt-4 text-4xl font-bold text-forest sm:text-5xl">SENASA health authorization</h2>
-          <p className="mt-5 text-base leading-7 text-ink/70">Our facility is authorized for the primary processing of agricultural foods of plant origin.</p>
+          <p className="mt-5 text-base leading-7 text-ink/70">Our facility is authorized for the primary processing of plant-based agricultural food products.</p>
         </div>
         <div className="max-w-xl">
           <div className="divide-y divide-forest/10">

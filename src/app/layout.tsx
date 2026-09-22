@@ -6,7 +6,7 @@ import { siteName, siteUrl, socialImage } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Titan Fruit | Peruvian origin. Global opportunities.", template: "%s | Titan Fruit" },
+  title: { default: "Titan Fruit | Peruvian Origin. Global Reach.", template: "%s | Titan Fruit" },
   description: "Integrated Peruvian partner for fresh fruit, IQF frozen solutions and processing services.",
   applicationName: siteName,
   manifest: "/manifest.webmanifest",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     siteName,
     locale: "en_US",
     alternateLocale: "es_PE",
-    title: "Titan Fruit | Peruvian origin. Global opportunities.",
+    title: "Titan Fruit | Peruvian Origin. Global Reach.",
     description: "Fresh, IQF frozen and processed fruit solutions from Peru.",
     url: "/en",
     images: [{ url: socialImage, width: 1200, height: 630, alt: "Titan Fruit - Peruvian fruit for global markets" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Titan Fruit | Peruvian origin. Global opportunities.",
+    title: "Titan Fruit | Peruvian Origin. Global Reach.",
     description: "Fresh, IQF frozen and processed fruit solutions from Peru.",
     images: [socialImage],
   },

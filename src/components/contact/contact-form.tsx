@@ -27,6 +27,6 @@ export function ContactForm() {
     </div>
     <label className="mt-5 block text-sm font-semibold text-forest">Message<textarea required name="message" rows={6} placeholder="Tell us about your requirements..." className="mt-2 w-full resize-y rounded-xl border border-forest/15 bg-white px-4 py-3 text-sm font-normal text-ink outline-none transition focus:border-leaf focus:ring-2 focus:ring-lime/50" /></label>
     <button type="submit" className="group mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full bg-lime px-6 py-4 text-xs font-bold uppercase tracking-[.1em] text-forest transition-colors hover:bg-forest hover:text-white">Send message <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" /></button>
-    <p className="mt-4 text-center text-xs text-ink/55">Your message will be addressed to ventas@titanfruitperu.com.</p>
+    <p className="mt-4 text-center text-xs text-ink/55">Your message will be sent to ventas@titanfruitperu.com.</p>
   </form>;
 }
