@@ -26,10 +26,10 @@ export function ProductCategory({
     : title;
 
   const displayExpandLabel = isSpanish
-    ? (expandLabel === "OTHER SELECTED FRUITS"
-        ? "OTRAS FRUTAS SELECCIONADAS"
-        : expandLabel === "OTHER SELECTED VEGETABLES"
-        ? "OTRAS VERDURAS SELECCIONADAS"
+    ? (expandLabel === "OTHER SELECTED FRUITS" || expandLabel === "VIEW MORE FRUITS"
+        ? "VER MÁS FRUTAS"
+        : expandLabel === "OTHER SELECTED VEGETABLES" || expandLabel === "VIEW MORE VEGETABLES"
+        ? "VER MÁS VERDURAS"
         : expandLabel)
     : expandLabel;
 
