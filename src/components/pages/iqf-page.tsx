@@ -13,11 +13,11 @@ const frozenProducts = [
 ] as const;
 
 const reasons: { icon: IconName; title: string; text: string }[] = [
-  { icon: "snow", title: "IQF Technology", text: "Individually quick frozen to preserve natural quality, color, flavor and nutrients." },
-  { icon: "shield", title: "Premium Quality", text: "Strict quality control from raw fruit selection to final packaging." },
+  { icon: "snow", title: "IQF Technology", text: "Preserves natural color, flavor, texture and nutrients through fast individual freezing." },
+  { icon: "shield", title: "Premium Quality", text: "Rigorous quality control from fruit selection through to final packaging." },
   { icon: "factory", title: "Food Safety", text: "SENASA-authorized facility with international food safety standards." },
   { icon: "package", title: "Flexible Packaging", text: "Custom packing options to meet your market and brand needs." },
-  { icon: "globe", title: "Global Supply", text: "Reliable supply for the USA, Europe and other international markets." },
+  { icon: "globe", title: "Global Supply", text: "Reliable supply for international markets." },
 ];
 
 const benefits: { icon: IconName; title: string; text: string }[] = [
@@ -36,9 +36,9 @@ export function IqfPage() {
         <p className="eyebrow text-[#69a8ff]">IQF frozen fruit solutions</p>
         <h1 className="display mt-5 text-5xl font-bold uppercase sm:text-6xl lg:text-7xl">IQF Frozen Fruit <span className="text-[#4d92ed]">from Peru</span></h1>
         <div className="mt-6 flex max-w-lg items-start gap-3 border-l-2 border-[#4d92ed] pl-4 text-base leading-7 text-white/85"><Icon name="snow" className="mt-1 h-5 w-5 shrink-0 text-[#69a8ff]" /><span>Individually quick frozen to lock in freshness, flavor, color and nutrients.</span></div>
-        <p className="mt-6 max-w-lg text-sm leading-6 text-white/80">We are a leading IQF frozen fruit exporter and supplier from Peru, providing high-quality fruit solutions for the food industry, retail and foodservice in the USA, Europe and beyond.</p>
+        <p className="mt-6 max-w-lg text-sm leading-6 text-white/80">From Peru to global markets — high-quality IQF frozen fruit solutions for food, retail, and foodservice.</p>
         <div className="mt-7"><Button href="#iqf-products" tone="lime" className="!text-forest hover:!text-forest font-bold">VIEW PRODUCTS</Button></div>
-        <div className="mt-8 grid max-w-3xl gap-4 border-t border-white/20 pt-4 sm:grid-cols-4 sm:gap-5"><div className="flex items-center gap-2"><Icon name="snow" className="h-6 w-6 shrink-0 text-[#69a8ff]" /><div><p className="text-[9px] font-bold uppercase tracking-[.08em]">IQF technology</p><p className="mt-1 text-[10px] text-white/70">Individually quick frozen</p></div></div><div className="flex items-center gap-2"><Icon name="shield" className="h-6 w-6 shrink-0 text-[#69a8ff]" /><div><p className="text-[9px] font-bold uppercase tracking-[.08em]">Premium quality</p><p className="mt-1 text-[10px] text-white/70">Strict quality control</p></div></div><div className="flex items-center gap-2"><Icon name="package" className="h-6 w-6 shrink-0 text-[#69a8ff]" /><div><p className="text-[9px] font-bold uppercase tracking-[.08em]">Reliable supply</p><p className="mt-1 text-[10px] text-white/70">Year-round availability</p></div></div><div className="flex items-center gap-2"><Icon name="leaf" className="h-6 w-6 shrink-0 text-[#69a8ff]" /><div><p className="text-[9px] font-bold uppercase tracking-[.08em]">Food safety</p><p className="mt-1 text-[10px] text-white/70">SENASA-authorized facility</p></div></div></div>
+        <div className="mt-8 grid max-w-3xl gap-4 border-t border-white/20 pt-4 sm:grid-cols-4 sm:gap-5"><div className="flex items-center gap-2"><Icon name="snow" className="h-6 w-6 shrink-0 text-[#69a8ff]" /><div><p className="text-[9px] font-bold uppercase tracking-[.08em]">IQF technology</p><p className="mt-1 text-[10px] text-white/70">Locks in peak freshness</p></div></div><div className="flex items-center gap-2"><Icon name="shield" className="h-6 w-6 shrink-0 text-[#69a8ff]" /><div><p className="text-[9px] font-bold uppercase tracking-[.08em]">Premium quality</p><p className="mt-1 text-[10px] text-white/70">Strict precision control</p></div></div><div className="flex items-center gap-2"><Icon name="package" className="h-6 w-6 shrink-0 text-[#69a8ff]" /><div><p className="text-[9px] font-bold uppercase tracking-[.08em]">Reliable supply</p><p className="mt-1 text-[10px] text-white/70">Year-round availability</p></div></div><div className="flex items-center gap-2"><Icon name="leaf" className="h-6 w-6 shrink-0 text-[#69a8ff]" /><div><p className="text-[9px] font-bold uppercase tracking-[.08em]">Food safety</p><p className="mt-1 text-[10px] text-white/70">SENASA-authorized facility</p></div></div></div>
       </div></div>
     </section>
 
