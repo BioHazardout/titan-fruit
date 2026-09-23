@@ -7,6 +7,8 @@ export function WhatsAppButton() {
   const [visible, setVisible] = useState(false);
   const pathname = usePathname();
 
+  if (pathname === "/maintenance") return null;
+
   useEffect(() => {
     const handleScroll = () => {
       const hero = document.querySelector("main > section:first-of-type") as HTMLElement | null;
