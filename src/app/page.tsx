@@ -1,9 +1,5 @@
-import { redirect } from "next/navigation";
+import { MaintenanceScreen } from "@/components/maintenance/maintenance-screen";
 
-/**
- * The public domain opens at `/`. Keep the English experience as the
- * default while preserving the explicit `/en` and `/es` routes.
- */
 export default function RootPage() {
-  redirect("/en");
+  return <MaintenanceScreen />;
 }
