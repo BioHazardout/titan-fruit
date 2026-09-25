@@ -5,8 +5,9 @@ import type { NextRequest } from "next/server";
  * Toggle de modo mantenimiento:
  * - false: El sitio web opera 100% normal (estado activo).
  * - true: Se activa la pantalla de mantenimiento en todo el sitio al instante.
+ * También se puede activar sin tocar código poniendo NEXT_PUBLIC_MAINTENANCE_MODE=true en Vercel.
  */
-const MAINTENANCE_MODE = true;
+const MAINTENANCE_MODE = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true";
 
 export function middleware(request: NextRequest) {
   if (!MAINTENANCE_MODE) {
